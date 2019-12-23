@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin:0;
+}
+
+/*Should I use a CSS library?*/
+
+.main {
+    display: grid;
+}
