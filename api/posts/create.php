@@ -24,10 +24,8 @@
     if(
         !empty($data->post)
     ){
-    
         // set product property values
         $post->post = $data->post;
-        $post->date = date('Y-m-d H:i:s');
     
         // create the product
         if($post->create()){

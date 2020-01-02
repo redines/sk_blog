@@ -5,9 +5,7 @@
         private $table_name = "posts";
     
         // object properties
-        public $id;
-        public $date;
-        public $text;
+        public $post;
     
         // constructor with $db as database connection
         public function __construct($db){
@@ -40,7 +38,7 @@
             $stmt = $this->conn->prepare($query);
         
             // sanitize
-            $this->post=htmlspecialchars(strip_tags($this->post));
+            $this->post=strip_tags($this->post);
         
             // bind values
             $stmt->bindParam(":post", $this->post);
