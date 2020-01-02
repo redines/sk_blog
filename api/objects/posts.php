@@ -27,5 +27,30 @@
         
             return $stmt;
         }
+
+        // create product
+        function create(){
+        
+            // query to insert record
+            $query = "INSERT INTO
+                     " . $this->table_name . "
+                     SET post=:post";
+        
+            // prepare query
+            $stmt = $this->conn->prepare($query);
+        
+            // sanitize
+            $this->post=htmlspecialchars(strip_tags($this->post));
+        
+            // bind values
+            $stmt->bindParam(":post", $this->post);
+        
+            // execute query
+            if($stmt->execute()){
+                return true;
+            }
+
+            return false;
+        }
     }
 ?>
