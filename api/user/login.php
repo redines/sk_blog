@@ -29,7 +29,7 @@
     $data = json_decode(file_get_contents("php://input"));
     
     // set product property values
-    $user->username = $data->username;
+    $user->username = $data->userName;
     $user_exists = $user->emailExists();
     
     // check if email exists and if password is correct

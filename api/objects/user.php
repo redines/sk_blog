@@ -70,7 +70,7 @@
         
             // get number of rows
             $num = $stmt->rowCount();
-        
+
             // if email exists, assign values to object properties for easy access and use for php sessions
             if($num>0){
         

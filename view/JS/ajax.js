@@ -1,18 +1,19 @@
 var xhr = new XMLHttpRequest();
 
-var userName = document.getElementById('username');
-var password = document.getElementById('password');
+var userName = document.getElementById('username').value;
+var password = document.getElementById('password').value;
 var submit = document.getElementById('submit');
-var login_info = {username, password};
+var login_info = {userName, password};
 
 console.log("Read ajax file");
 submit.addEventListener("click",submit_form);
 
-function submit_form(){
-    console.log("in function");
-    let url = "api/user/login.php"
+function submit_form(e){
+    e.preventDefault();
+
+    let url = "http://localhost/sk_blog/api/user/login.php"
     
-    const options = {
+    var options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -20,26 +21,13 @@ function submit_form(){
         body: JSON.stringify(login_info)
     }
 
-    fetch(url,options);
+    fetch(url,options).then((response) => response.json())
+    .then((data) => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
-    /*
-    console.log(url);
-    let input_name = userName.value;
-    let input_pwd = password.value;
-
-    xhr.open('POST',url,true);
-
-    let formdata = new FormData();
-    formdata.append('username',input_name);
-    formdata.append('password',input_pwd);
-
-    xhr.onload = function() {
-        if(xhr.status == 200) {
-            console.log(xhr.responseText);
-        }else if(xhr.status == 400){
-            console.log("Incorrect info: user do not exist or wrong password");
-        }
-    }
-
-    xhr.send(formdata);*/
+console.log("lets hope this stays");
