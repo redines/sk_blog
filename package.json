@@ -1,0 +1,22 @@
+{
+  "name": "sk_blog",
+  "version": "1.0.0",
+  "description": "my blog for trip to korea",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redines/sk_blog.git"
+  },
+  "author": "Pontus Göth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redines/sk_blog/issues"
+  },
+  "homepage": "https://github.com/redines/sk_blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
