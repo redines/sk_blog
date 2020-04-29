@@ -1,5 +1,7 @@
 const express = require('express');
-const mariadb = require('mariadb');
+const Sequelize = require('sequelize');
+//routes
+const addPost = require('./routes/addPost');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,33 +17,26 @@ app.use(function(req, res, next) {
   next();
 });
 
-
-const pool = mariadb.createPool({
-     host: 'localhost', 
-     user:'root', 
-     password: '',
-     database: 'skblog',
-     connectionLimit: 5
+const db = new Sequelize('mariadb://root:@localhost/skblog',{
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
-pool.getConnection()
-.then(conn => {
-    conn.query("SELECT * from posts")
-      .then((rows) => {
-        console.log(rows);
-
-      })
-      .catch(err => {
-        //handle error
-        console.log(err); 
-        conn.end();
-      })
-      
-  }).catch(err => {
-    //not connected
+db.authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
   });
 
+
 app.get('/', (req, res) => res.send('Hello World!'))
+//app.use('/api/addpost', addPost);
 
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
