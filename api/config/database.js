@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-module.exports = new Sequelize('mariadb://root:@localhost/skblog',{
+module.exports = new Sequelize('mariadb://root:root@localhost/skblog',{
   pool: {
     max: 5,
     min: 0,

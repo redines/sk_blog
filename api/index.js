@@ -1,7 +1,8 @@
 const express = require('express');
 const db = require('./config/database');
 //routes
-const addPost = require('./routes/addPost');
+const getPost = require('./routes/getPosts');
+const addPost = require('./routes/addPost')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -26,6 +27,7 @@ db.authenticate()
 //defining routes
 app.get('/', (req, res) => res.send('Hello World!'))
 app.use('/api/addpost', addPost);
+app.use('/api/getpost', getPost);
 
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

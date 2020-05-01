@@ -2,10 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../config/database');
 
     const Posts = db.define('posts', {
-        date: {
-            type: Sequelize.DATE,
-        },
-        titel: {
+        title: {
             type: Sequelize.STRING
         },
         post: {
