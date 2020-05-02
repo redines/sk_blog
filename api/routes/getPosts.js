@@ -6,7 +6,6 @@ router.get('/', (req, res) =>
     Posts.findAll()
     .then(posts => {
         console.log(posts)
-        res.sendStatus(200);
     })
     .catch(err => console.log(err)));
   

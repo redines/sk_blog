@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const db = require('./config/database');
 //routes
 const getPost = require('./routes/getPosts');
@@ -7,7 +8,8 @@ const addPost = require('./routes/addPost')
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
+// parse application/json
+app.use(bodyParser.json())
 
 /*
 app.use(function(req, res, next) {
