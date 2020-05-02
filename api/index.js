@@ -28,8 +28,8 @@ db.authenticate()
 
 //defining routes
 app.get('/', (req, res) => res.send('Hello World!'))
-app.use('/api/addpost', addPost);
-app.use('/api/getpost', getPost);
+app.use('/addpost', addPost);
+app.use('/getpost', getPost);
 
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

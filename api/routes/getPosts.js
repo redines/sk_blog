@@ -5,6 +5,7 @@ const Posts = require('../models/posts');
 router.get('/', (req, res) =>
     Posts.findAll()
     .then(posts => {
+        res.json(posts)
         console.log(posts)
     })
     .catch(err => console.log(err)));
