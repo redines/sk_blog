@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
   })
     .then(function (posts) {
       if (posts) {
-        res.send(Posts);
+        res.send(posts);
       } else {
         res.status(400).send('Error in insert new record');
       }

@@ -9,5 +9,12 @@ router.get('/', (req, res) =>
         console.log(posts)
     })
     .catch(err => console.log(err)));
+
+    /*db.sync();
+    Posts.create({
+        title: "test",
+        post : "test",
+        username: "test"
+  });*/
   
 module.exports = router;
