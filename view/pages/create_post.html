@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Write post</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../style/style.css">
+  <title>Write post</title>
 </head>
+
 <body>
-    <form>
-          <div>
-            <label>Blog title</label>
-            <input type = "text"
-                   id = "myText"
-                   value = "text here" />
-          </div>
-          <div>
-            <label>Write blogpost</label>
-            <textarea id="blogpost"></textarea>
+  <div class="container">
+    <div class="side-col">
+      <div class="about">
+        <img src="img/dog.jpg" alt="cute dog">
+        <h4>About</h4>
+        <p>
+          Nerd, aspiring programmer and an asianofile.
+        </p>
+        <h4>Find me at:</h4>
+        <span>
+          github, linkedin
+        </span>
+      </div>
+      <a href="pages/create_post.html" class="button">Write blog post</a>
+    </div>
+    <div class="content">
+      <form class="write-form">
+        <div>
+          <input type="text" id="myText" placeholder="Blog title" />
+        </div>
+        <div>
+          <textarea id="blogpost" type="text" placeholder="Write text here..."></textarea>
         </div>
       </form>
-      <button id="submit">test</button>
-      <script type="text/javascript" src="../JS/ajax.js"></script> 
+      <button id="submit">post</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="../JS/ajax.js"></script>
 </body>
+
 </html>

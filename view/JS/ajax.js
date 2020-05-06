@@ -1,5 +1,3 @@
-console.log("lets hope this stays");
-
 document.getElementById("submit").addEventListener("click", submit_form);
 const user = "pontus";
 let blogtitle = document.getElementById("myText").value;

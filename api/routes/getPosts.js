@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const db = require('../config/database');
 const Posts = require('../models/posts');
+const dbsync = require('../config/db_sync')
 
 router.get('/', (req, res) =>
     Posts.findAll()
@@ -10,11 +11,4 @@ router.get('/', (req, res) =>
     })
     .catch(err => console.log(err)));
 
-    /*db.sync();
-    Posts.create({
-        title: "test",
-        post : "test",
-        username: "test"
-  });*/
-  
 module.exports = router;
