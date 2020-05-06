@@ -42,9 +42,11 @@
     padding: 10px;
     text-align: center;
     text-decoration: none;
-    overflow: hidden;
     cursor: pointer;
+    font-size: medium;
 }
+
+.button:hover {background-color: #3e8e41}
 
 /*CSS styling forms*/
 
